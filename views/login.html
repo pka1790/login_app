@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+    Login app
+    </title>
+    
+    </head>
+
+<body>
+<form action="/login" method="post" onsubmit="return myFunction()">
+    <h1>LOGIN FORM</h1>
+    <input type="text"  id="firstname" name="firstname" required="required" placeholder="FIRSTNAME"/>
+    <br/>
+    <input type="text" id="lastname" name="lastname" required="required" placeholder="LASTNAME"/>
+        <br/>
+    <input type="number" id="age" name="age"  required="requried"/>
+    <p id="demo"></p>
+    <br/>
+    <!--<input type="text" name="birthdate" id="bidthdate" placeholder="mm/dd/yyyy" required="required" readonly="readonly"/>-->
+    <br/>
+    &nbsp;&nbsp;
+    Gender:<br>
+      <input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+   <input type="submit" name="submit"  id="btnLogin" value="SignIn"/>
+       
+</form>
+    
+<script>
+    
+function myFunction() {
+    var x;
+
+   x = document.getElementById("age").value;
+
+   if (isNaN(x) || x <21 ) {
+        text = "Input not valid";
+        alert('enter valid age');
+        return false;
+    } else {
+        
+        return true;
+       // text = "Input OK";
+    }
+    
+}
+</script>
+    
+</body>
+    
+    
+    
+</html>

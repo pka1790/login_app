@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+
+ <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+
+
+</head>
+<body>
+
+<div id="wrapper">
+
+	<div id="header" align="center">
+		<span style="font-size: 35pt;">MnM MyCargo</span>
+	</div>
+<hr/>
+
+<div id="content">
+<form action="/register" method="post">
+
+ <h3>Create A New Account</h3>
+  
+  <% if(typeof(errorMessage) !== 'undefined') {%>
+         <span><%= errorMessage %></span>
+         <% } %>
+
+<table style="width: 100%;"> 
+	<tr>
+		<td class="reglbl"><label>First Name</label></td>
+	</tr>
+	<tr>
+		<td><input type="text" id="firstname" class="regfields" name="firstname" placeholder="First Name" required="required" /></td>
+	</tr>
+	
+	
+	<tr>
+		<td class="reglbl"> <label>Last Name</label> </td>
+	</tr>
+	<tr>
+		<td> <input type="text" id="lastname" class="regfields" name="lastname" placeholder="Last Name" required="required" /></td>
+	</tr>
+	
+	
+	<tr>
+		<td class="reglbl"> <label>Middle Name</label></td>
+	</tr>	
+	<tr>
+		<td> <input type="text" id="middlename" class="regfields" name="middlename" placeholder="Middle Name" required="required" /></td>
+	</tr>
+	
+	<tr>
+		<td class="reglbl"> <label>Username</label> </td>
+	</tr>	
+	<tr>
+		<td> <input type="text" id="username" class="regfields" name="username" placeholder="User Name" required="required" /></td>
+	</tr>
+
+	<tr>
+		<td class="reglbl"> <label>Password</label></td>
+	</tr>	
+	<tr>
+		<td> <input type="password" id="password" class="regfields" name="password" placeholder="********" required="required" /></td>
+	</tr>
+	
+	<tr>
+		<td class="reglbl"> <label>Email</label></td>
+	</tr>	
+	<tr>
+		<td> <input type="email" id="emailid" name="emailid" class="regfields" placeholder="name@example.com" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" /></td>
+	</tr>
+	
+	<tr>
+		<td class="reglbl"><label>Mobile</label></td>
+	</tr>	
+	<tr>
+		<td> <input type="text" pattern="[0-9]{10}" class="regfields" title="Enter valid mobile" id="mobile" name="mobile" placeholder="1234567890" required="required"/> </td>
+	</tr>
+	
+	<tr>
+		<td class="reglbl"> <label>Date of Birth</label></td>
+	</tr>	
+	<tr>
+		<td> <input type="text" name="birthdate" id="bidthdate" placeholder="mm/dd/yyyy" required="required" readonly="readonly"/></td>
+	</tr>
+	
+	<tr>
+		<td class="reglbl"><label>Registered as</label></td>
+	</tr>
+	<tr>
+		<td>
+			<input type="radio" name="registeras" value="loadGenerator" checked="checked" />LoadGenerator<br/>
+			<input type="radio" name="registeras" value="loadCarrier" />Load Carrier
+		</td>
+	</tr>
+	<tr>
+		<td style="text-align: center;"><input type="submit" id="btn-create-account" name="register" value="Sign Up"/> </td>
+	</tr>
+</table>
+
+		<p>
+		<h2>OR</h2>
+		<h3>Login With Below Accounts<h3>
+	<a href="/auth/facebook" ><img src="images/f.jpg" height="40px"/> </a>
+	<a href="/auth/twitter" ><img src="images/t.jpg" height="40px"/> </a>
+	<a href="/auth/google" ><img src="images/g.jpg" height="40px"/> </a>
+	</p>
+	
+
+</form>
+</div>
+</div>
+
+<script>
+  $(function() {
+    $( "#bidthdate" ).datepicker();
+  });
+  </script>
+</body>
+</html>
